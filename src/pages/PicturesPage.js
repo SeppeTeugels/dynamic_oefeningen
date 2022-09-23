@@ -40,7 +40,7 @@ const PICTURES_DATA = [
     },
 ];
 
-export function ShowPictures(prop){
+export function Pictures(prop){
     const {pictures} = prop;
     if (!pictures) return;
     return <div>
@@ -61,6 +61,6 @@ export function PictureProduct(props) {
 export function PicturesPage(){
     return <div style={{marginLeft:"2%"}}>
         <h1>Pictures</h1>
-        <ShowPictures pictures={PICTURES_DATA}/>
+        <Pictures pictures={PICTURES_DATA}/>
     </div>
 }
