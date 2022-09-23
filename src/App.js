@@ -1,9 +1,9 @@
 import './App.css';
 import {PRODUCTS_DATA} from "./data/data";
 import {MenuCardPage} from "./pages/MenuCardPage";
-import {PicturesPage} from "./pages/PicturesPage";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import 'react-tabs/style/react-tabs.css';
+import {PicturesPage, ShowPictures} from "./pages/PicturesPage";
 
 function App() {
   return (
