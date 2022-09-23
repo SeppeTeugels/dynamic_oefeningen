@@ -18,5 +18,5 @@ export function ProductSize(prop) {
 
 export function ProductNote(prop) {
     const {product} = prop;
-    return <div style={{fontSize:"smaller", color:"blue"}}> {product.note ? product.note : ""} </div>;
+    return <div style={{fontSize:"x-small", color:"blue"}}> {product.note ? product.note : ""} </div>;
 }
