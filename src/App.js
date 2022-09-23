@@ -1,13 +1,14 @@
 import './App.css';
 import {PRODUCTS_DATA} from "./data/data";
-import {MenuCard} from "./components/MenuCard";
+import {MenuCardPage} from "./pages/MenuCardPage";
+import {PicturesPage} from "./pages/PicturesPage";
 
 function App() {
   return (
-      <div>
-        <h1>Menu</h1>
-        <MenuCard product={PRODUCTS_DATA}/>
-      </div>
+      <>
+        <MenuCardPage product={PRODUCTS_DATA}/>
+          <PicturesPage/>
+      </>
   );
 }
 
