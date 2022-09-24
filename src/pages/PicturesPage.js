@@ -51,7 +51,7 @@ export function Pictures(prop){
 export function PictureProduct(props) {
     const {picture} = props;
     return <div style={{flex: 1, display:"inline"}}>
-        <img style={{width:"90%"}} src={`images/${picture.name}`} alt={""}/>
+        <img style={{width:"90%", maxWidth:"1000px"}} src={`images/${picture.name}`} alt={""}/>
         <div style={{fontSize: 10, marginTop:"5px", marginBottom:"5px" }}>by
             <a href={picture.credit}> {picture.author}</a>
         </div>

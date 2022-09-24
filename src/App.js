@@ -3,7 +3,7 @@ import {PRODUCTS_DATA} from "./data/data";
 import {MenuCardPage} from "./pages/MenuCardPage";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import 'react-tabs/style/react-tabs.css';
-import {PicturesPage, Pictures} from "./pages/PicturesPage";
+import {PicturesPage} from "./pages/PicturesPage";
 import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
