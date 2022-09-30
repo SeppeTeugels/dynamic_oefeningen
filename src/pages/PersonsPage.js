@@ -8,6 +8,10 @@ export function PersonsPage(props) {
         <Section title={'alle personen'}>
             <Persons persons={persons}/>
         </Section>
+        <Section title={'alle personen volgens leeftijd'}>
+            <Persons persons={[...persons].sort((p,a) => a.age - p.age)}/>
+
+        </Section>
     </>
 
 }
