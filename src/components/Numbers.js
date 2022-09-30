@@ -1,4 +1,5 @@
 import {Section} from "./Section";
+import {Card, Col} from "react-bootstrap";
 
 export function Numbers(props){
     const {numbers} = props;
@@ -6,11 +7,16 @@ export function Numbers(props){
     if(!numbers) return;
     return <>
         <Section title={title}>
-            <div style={{float:"left", margin:"5%"}}></div>
-            <div style={{display:"flex", height:"100px", width:"90%" , flexWrap:"wrap", alignItems:"center" ,marginBottom:"150px"}}>
-                {numbers.map(n => <div style={{border:"solid 1px",  backgroundColor:"#ffffff", width:" 25%", margin:"10px", textAlign:"center"}}>{n}</div>)}
-            </div>
-            <div style={{float:"right", margin:"5%"}}></div>
+               {numbers.map((n, i) => <Number key={i} number={n}/>)}
         </Section>
         </>
+}
+
+export function Number(props){
+    const {number} = props;
+    if(!number) return;
+    return <Col xs={4} sm={3} md={2} xxl={1}
+        className={"text-center"}>
+        <Card className="m-2 p-2 shadow-sm">{number}</Card>
+    </Col>
 }

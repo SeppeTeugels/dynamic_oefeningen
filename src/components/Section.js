@@ -1,19 +1,18 @@
-export function Section(props){
-    const {title, children} = props;
-    return(<>
+import {Container, Row} from "react-bootstrap";
 
-        <h3 style={{textAlign: "center", fontWeight: "bold"}}>
-            {title}
-        </h3>
-    <div style={{
-        display: "flex",
-        height: "100px",
-        width: "100%",
-        flexWrap: "wrap",
-        alignItems: "center",
-        marginBottom: "150px"
-    }}>
-        {children}
-    </div>
-    </>    )
+export function Section(props) {
+    const {title, children} = props;
+    return (<>
+        <div  style={{backgroundColor: "#e6e6fa", marginBottom:"20px"}}>
+            <h3 style={{textAlign: "center", fontWeight: "bold"}}>
+                {title}
+            </h3>
+            <Container>
+                <Row>
+                    {children}
+                </Row>
+            </Container>
+        </div>
+
+    </>)
 }

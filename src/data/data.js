@@ -36,14 +36,35 @@ export const CAR_DATA = [
         name: "geitje",
         brand: "citroën",
     },
+    {id: 5, name: "auto1", brand: "Peugeot", type: "505", color: "grijs"},
+    {id: 6, name: "auto2", brand: "Fiat", type: "Panda"},
+    {id: 7, name: "auto3", brand: "Fiat", type: "Tipo", color: "groen"},
+    {id: 8, name: "auto4", brand: "Citroën", type: "C4", color: "rood"},
+    {id: 9, name: "auto5", brand: "Fiat", type: "Panda", color: "rood"}
 ];
 
 export  const COLOR_DATA= [
-    {dutch: "blauw",english:"blue"},
-    {dutch: "geel",english:"yellow"},
-    {dutch: "rood",english:"red"},
-    {dutch: "zwart",english:"black"},
-    {dutch: "wit",english:"white"},
-    {dutch: "grijs",english:"grey"},
-    {dutch: "groen",english:"green"}
+    {dutch: "blauw",english:"blue", textColor:"#ffffff"},
+    {dutch: "geel",english:"yellow", textColor:"#000000"},
+    {dutch: "rood",english:"red", textColor:"#000000"},
+    {dutch: "zwart",english:"black", textColor:"#ffffff"},
+    {dutch: "wit",english:"white", textColor:"#000000"},
+    {dutch: "grijs",english:"grey", textColor:"#ffffff"},
+    {dutch: "groen",english:"green", textColor:"#000000"}
+];
+
+export const PERSON_DATA = [
+    {id: 1, name: "Jan", age: 18, city: "Mechelen"},
+    {id: 2, name: "Marie", age: 25, city: "Katelijne"},
+    {id: 3, name: "Anton", age: 16, city: "Duffel"},
+    {id: 4, name: "Yves", age: 24, city: "Mechelen"},
+    {id: 5, name: "Marijke", age: 16, city: "Duffel"},
+    {id: 6, name: "Karel", age: 16, city: "Mechelen"},
+    {id: 7, name: "Bart", age: 18, city: "Mechelen"},
+    {id: 8, name: "Marijke", age: 28, city: "Lier"},
+    {id: 9, name: "Dirk", age: 20, city: "Mechelen"},
+    {id: 10, name: "Bavo", age: 20, city: "Lint"},
+    {id: 11, name: "Kris", age: 19, city: "Duffel"},
+    {id: 12, name: "Leen", age: 21, city: "Katelijne"},
+    {id: 13, name: "Lieve", age: 20, city: "Mechelen"},
 ];
