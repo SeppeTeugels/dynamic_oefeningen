@@ -1,5 +1,4 @@
 import {COLOR_DATA} from "../data/data";
-import {Section} from "./Section";
 
 export function Cars(props) {
     const {cars} = props;
