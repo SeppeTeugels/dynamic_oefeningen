@@ -23,7 +23,7 @@ export function Person(props) {
                 className={"text-center"}>
         <Card className="m-2 p-2 shadow-sm">
             <h6>{person.name}</h6>
-            <p>{person.age}</p>
+            <p>{ person.age}</p>
             <p>{person.city}</p>
         </Card>
     </Col>
