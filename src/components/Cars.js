@@ -1,24 +1,13 @@
 import {COLOR_DATA} from "../data/data";
-import {array} from "prop-types";
+import {Section} from "./Section";
 
 export function Cars(props) {
-    const {cars} = props;
-    const {title} = props;
+    const {cars, title} = props;
     if (!cars) return;
     return <>
-        <h3 style={{textAlign: "center", fontWeight: "bold"}}>
-            {title}
-        </h3>
-        <div style={{
-            display: "flex",
-            height: "100px",
-            width: "100%",
-            flexWrap: "wrap",
-            alignItems: "center",
-            marginBottom: "150px"
-        }}>
-            {cars.map(c => <Car key={c.id} car={c}/>)}
-        </div>
+       <Section title={title}>
+           {cars.map(c => <Car car={c}/>)}
+       </Section>
     </>
 }
 
