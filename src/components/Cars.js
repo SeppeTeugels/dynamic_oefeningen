@@ -5,10 +5,7 @@ export function Cars(props) {
     const {cars} = props;
     if (!cars) return;
     return <>
-        <Section>
             {cars.map(c => <Car car={c}/>)}
-        </Section>
-
     </>
 }
 
@@ -16,7 +13,6 @@ export function Car(props) {
     const {car} = props
     return <>
         <div key={car.id} style={{
-
             backgroundColor: "#ffffff",
             width: " 30%",
             margin: "10px",
@@ -31,7 +27,7 @@ export function Car(props) {
             <div>{car.note ? `opmerking: ${car.note}` : ""}</div>
             <div>
                 {car.color ? <div
-                    style={car?.color && {backgroundColor: Translate(COLOR_DATA, car.color), Color:`"${textColor(COLOR_DATA, car.color)}"`}}> kleur: {car.color} </div> : ""}
+                    style={car?.color && {backgroundColor: Translate(COLOR_DATA, car.color), Color:`${textColor(COLOR_DATA, car.color)}`}}> kleur: {car.color} </div> : ""}
             </div>
         </div>
     </>
