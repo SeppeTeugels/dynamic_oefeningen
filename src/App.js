@@ -1,5 +1,5 @@
 import './App.css';
-import {CAR_DATA, NUMBER_DATA, PERSON_DATA, PRODUCTS_DATA} from "./data/data";
+import {CAR_DATA, CITY_DATA, NUMBER_DATA, PERSON_DATA, PRODUCTS_DATA} from "./data/data";
 import {MenuCardPage} from "./pages/MenuCardPage";
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import 'react-tabs/style/react-tabs.css';
@@ -42,7 +42,7 @@ function App() {
             <CarsPage cars={CAR_DATA}/>
         </TabPanel>
         <TabPanel>
-            <PersonsPage persons={PERSON_DATA}/>
+            <PersonsPage persons={PERSON_DATA} cities={CITY_DATA}/>
         </TabPanel>
     </Tabs>
       </>

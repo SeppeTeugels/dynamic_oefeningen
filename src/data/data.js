@@ -1,9 +1,9 @@
 export const PRODUCTS_DATA = [
-    {name: "cola", price: 1 },
+    {name: "cola", price: 1},
     {name: "water", price: 1, note: "plat of bruisend"},
     {name: "bier", price: 1, size: 25},
     {name: "bier groot", price: 1, size: 33},
-    {name: "wijn", price: 2, note:"rood, wit of rosé"},
+    {name: "wijn", price: 2, note: "rood, wit of rosé"},
     {name: "cava", price: 3},
 ];
 
@@ -43,14 +43,14 @@ export const CAR_DATA = [
     {id: 9, name: "auto5", brand: "Fiat", type: "Panda", color: "rood"}
 ];
 
-export  const COLOR_DATA= [
-    {dutch: "blauw",english:"blue", textColor:"#ffffff"},
-    {dutch: "geel",english:"yellow", textColor:"#000000"},
-    {dutch: "rood",english:"red", textColor:"#000000"},
-    {dutch: "zwart",english:"black", textColor:"#ffffff"},
-    {dutch: "wit",english:"white", textColor:"#000000"},
-    {dutch: "grijs",english:"grey", textColor:"#ffffff"},
-    {dutch: "groen",english:"green", textColor:"#000000"}
+export const COLOR_DATA = [
+    {dutch: "blauw", english: "blue", textColor: "#ffffff"},
+    {dutch: "geel", english: "yellow", textColor: "#000000"},
+    {dutch: "rood", english: "red", textColor: "#000000"},
+    {dutch: "zwart", english: "black", textColor: "#ffffff"},
+    {dutch: "wit", english: "white", textColor: "#000000"},
+    {dutch: "grijs", english: "grey", textColor: "#ffffff"},
+    {dutch: "groen", english: "green", textColor: "#000000"}
 ];
 
 export const PERSON_DATA = [
@@ -67,4 +67,9 @@ export const PERSON_DATA = [
     {id: 11, name: "Kris", age: 19, city: "Duffel"},
     {id: 12, name: "Leen", age: 21, city: "Katelijne"},
     {id: 13, name: "Lieve", age: 20, city: "Mechelen"},
+];
+
+export const CITY_DATA = [
+    {name: "Antwerpen", population: 100},
+    {name: "Brussel", population: 200}
 ];
