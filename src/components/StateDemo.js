@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {MyButton} from "./MyButton";
 import {Counter} from "./counter";
+import {OnOffDemo} from "./OnOffDemo";
 
 export function StateDemo(){
     const [demoValue, setDemoValue] = useState(0)
@@ -20,6 +21,9 @@ export function StateDemo(){
         </div>
         <div style={{marginTop:"20px"}}>
             <Counter name={"counter2"}/>
+        </div>
+        <div style={{marginTop:"20px"}}>
+            <OnOffDemo/>
         </div>
     </>
 }
