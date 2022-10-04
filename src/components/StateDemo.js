@@ -18,5 +18,8 @@ export function StateDemo(){
         <div style={{marginTop:"20px"}}>
             <Counter name={"counter1"}/>
         </div>
+        <div style={{marginTop:"20px"}}>
+            <Counter name={"counter2"}/>
+        </div>
     </>
 }
