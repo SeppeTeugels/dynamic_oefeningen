@@ -9,6 +9,7 @@ import PropTypes from "prop-types";
 import {NumbersPage} from "./pages/NumbersPage";
 import {CarsPage} from "./pages/CarsPage";
 import {PersonsPage} from "./pages/PersonsPage";
+import {EventsAndStatePage} from "./pages/EventsAndStatePage";
 
 
 Number.propTypes = {numbers: PropTypes.any};
@@ -25,6 +26,8 @@ function App() {
             <Tab>Numbers</Tab>
             <Tab>Cars</Tab>
             <Tab>Persons</Tab>
+            <Tab>Events</Tab>
+
         </TabList>
 
         <TabPanel>
@@ -44,6 +47,10 @@ function App() {
         <TabPanel>
             <PersonsPage persons={PERSON_DATA} cities={CITY_DATA}/>
         </TabPanel>
+        <TabPanel>
+            <EventsAndStatePage/>
+        </TabPanel>
+
     </Tabs>
       </>
   );
