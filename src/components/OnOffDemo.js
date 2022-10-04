@@ -6,6 +6,7 @@ export function OnOffDemo(){
         <div>huidige waarde is {isOn? "on": "off"}</div>
         <MyButton onClick={() => setisOn(true)}>on</MyButton>
         <MyButton onClick={() => setisOn(false)}>off</MyButton>
+        <MyButton onClick={() => setisOn(!isOn)}>toggle</MyButton>
     </>
 }
 
