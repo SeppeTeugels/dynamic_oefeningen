@@ -1,5 +1,7 @@
 import {MyButton} from "./MyButton";
 import {Button} from "react-bootstrap";
+import {Section} from "./Section";
+import {StateDemo} from "./StateDemo";
 
 export function EventDemo() {
     return (<>
