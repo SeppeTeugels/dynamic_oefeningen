@@ -3,8 +3,8 @@ import {MyButton} from "./MyButton";
 import {Counter} from "./counter";
 import {OnOffDemo} from "./OnOffDemo";
 
-function DemoValue(){
-    const [demoValue, setDemoValue] = useState(0)
+function DemoValue(props){
+    const {demoValue, setDemoValue} = props
     return <>
         <div>de waarde van demoValue is {demoValue}</div>
         <div>de waarde van demoValue is {demoValue}</div>
@@ -17,9 +17,17 @@ function DemoValue(){
 
 }
 
+function ReadOnlyDemoValue(props){
+    const {demoValue} = props
+    return<>
+        <div>de waarde van demoValue is {demoValue}</div>
+    </>
+}
+
 export function StateDemo(){
+    const [demoValue, setDemoValue] = useState(0)
     return <>
-        <DemoValue/>
+        <DemoValue demoValue={demoValue} setDemoValue={setDemoValue}/>
         <div style={{marginTop:"20px"}}>
             <Counter name={"counter1"}/>
         </div>
@@ -29,6 +37,7 @@ export function StateDemo(){
         <div style={{marginTop:"20px"}}>
             <OnOffDemo/>
         </div>
+        <ReadOnlyDemoValue demoValue={demoValue}/>
     </>
 }
 
