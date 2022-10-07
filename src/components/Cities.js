@@ -2,7 +2,6 @@ import {Card, Col} from "react-bootstrap";
 
 export function Cities(props){
     const {cities} = props;
-    console.log(cities)
     if (!cities) return;
     return (<>
         {cities.map(c => <City key={c.name} city={c}/>)}

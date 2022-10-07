@@ -7,9 +7,7 @@ export function Counter(props) {
     return <>
         <div>de waarde van {name} is {demoValue}</div>
         <MyButton onClick={()=> setDemoValue(0)}>clear</MyButton>
-
         <MyButton onClick={()=> setDemoValue(demoValue-1)}>-</MyButton>
-
         <MyButton onClick={()=> setDemoValue(demoValue+1)}>+</MyButton>
     </>
 
