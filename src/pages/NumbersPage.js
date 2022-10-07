@@ -5,8 +5,8 @@ export function NumbersPage(props){
     const {numbers} = props;
     if (!numbers) return;
     return <>
-        <div className={"mx-3"}>
-           <Section title={'alle getallen'}>
+        <div className={"mx-3"} >
+           <Section title={'alle getallen'} initial={1}>
             <Numbers numbers={numbers} />
         </Section>
         <Section title={'getallen>6'}>

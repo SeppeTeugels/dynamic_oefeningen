@@ -2,7 +2,8 @@ import {Button, Container, Row} from "react-bootstrap";
 import {useState} from "react";
 
 export function Section(props) {
-    const [isOpen, setIsOpen] = useState(false)
+    const {initial} = (props)
+    const [isOpen, setIsOpen] = useState((initial === 1)?true:false)
     const {title, children} = props;
     return (<>
         <div  style={{backgroundColor: "#e6e6fa", marginBottom:"20px"}}>

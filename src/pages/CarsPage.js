@@ -6,7 +6,7 @@ export function CarsPage(props){
     const {cars} = props;
     if (!cars) return;
     return <>
-        <Section title={"auto's"}>
+        <Section title={"auto's"} initial={1}>
                 <Cars cars={cars} />
         </Section>
     </>
