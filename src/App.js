@@ -13,7 +13,8 @@ import {EventsAndStatePage} from "./pages/EventsAndStatePage";
 import {FavoriteNumberPage} from "./pages/FavoriteNumberPage";
 import {InputPage} from "./pages/InputPage";
 import {SearchPersonsPage} from "./pages/SearchPersonsPage";
-
+import "./services/firebase"
+import {PersonsFromDbPage} from "./pages/PersonsFromDbPage";
 
 Number.propTypes = {numbers: PropTypes.any};
 
@@ -33,6 +34,7 @@ function App() {
             <Tab>Favorite Number</Tab>
             <Tab>Input</Tab>
             <Tab>Search</Tab>
+            <Tab>Persons in database</Tab>
         </TabList>
 
         <TabPanel>
@@ -63,6 +65,9 @@ function App() {
         </TabPanel>
         <TabPanel>
             <SearchPersonsPage persons={PERSON_DATA}/>
+        </TabPanel>
+        <TabPanel>
+            <PersonsFromDbPage/>
         </TabPanel>
     </Tabs>
       </>
