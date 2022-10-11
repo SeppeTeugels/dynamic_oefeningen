@@ -11,6 +11,7 @@ import {CarsPage} from "./pages/CarsPage";
 import {PersonsPage} from "./pages/PersonsPage";
 import {EventsAndStatePage} from "./pages/EventsAndStatePage";
 import {FavoriteNumberPage} from "./pages/FavoriteNumberPage";
+import {InputPage} from "./pages/InputPage";
 
 
 Number.propTypes = {numbers: PropTypes.any};
@@ -29,7 +30,7 @@ function App() {
             <Tab>Persons</Tab>
             <Tab>Events</Tab>
             <Tab>Favorite Number</Tab>
-
+            <Tab>Input</Tab>
         </TabList>
 
         <TabPanel>
@@ -54,6 +55,9 @@ function App() {
         </TabPanel>
         <TabPanel>
             <FavoriteNumberPage numbers={NUMBER_DATA}/>
+        </TabPanel>
+        <TabPanel>
+            <InputPage/>
         </TabPanel>
     </Tabs>
       </>
