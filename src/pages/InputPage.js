@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {Card, Form} from "react-bootstrap";
+import { Form} from "react-bootstrap";
 
 export function InputPage() {
     const [testInput, setTestInput] = useState()
