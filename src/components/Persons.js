@@ -2,9 +2,9 @@ import {Card, Col} from "react-bootstrap";
 
 export function Persons(props) {
     const {persons} = props;
-    if (!persons) return;
+    if (!persons || persons === undefined) return;
     return (<>
-        {persons.map(p => <Person person={p}/>)}
+        {persons.map((p,i) => <Person person={p} key={i}/>)}
     </>)
 }
 
