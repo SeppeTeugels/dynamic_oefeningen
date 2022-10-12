@@ -16,6 +16,7 @@ import {SearchPersonsPage} from "./pages/SearchPersonsPage";
 import "./services/firebase"
 import {PersonsFromDbPage} from "./pages/PersonsFromDbPage";
 import {CarsFromDbPage} from "./pages/CarsFromDbPage";
+import {MenuFromDbPage} from "./pages/MenuFromDbPage";
 
 Number.propTypes = {numbers: PropTypes.any};
 
@@ -37,6 +38,7 @@ function App() {
             <Tab>Search</Tab>
             <Tab>Persons@DB</Tab>
             <Tab>Cars@DB</Tab>
+            <Tab>Menu@DB</Tab>
         </TabList>
 
         <TabPanel>
@@ -73,6 +75,9 @@ function App() {
         </TabPanel>
         <TabPanel>
             <CarsFromDbPage/>
+        </TabPanel>
+        <TabPanel>
+            <MenuFromDbPage/>
         </TabPanel>
     </Tabs>
       </>

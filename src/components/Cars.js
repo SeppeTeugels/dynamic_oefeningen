@@ -4,7 +4,7 @@ export function Cars(props) {
     const {cars} = props;
     if (!cars) return;
     return <>
-            {cars.map(c => <Car car={c}/>)}
+            {cars.map(c => <Car car={c} key={c.id}/>)}
     </>
 }
 
