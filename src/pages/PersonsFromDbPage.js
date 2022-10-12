@@ -1,26 +1,42 @@
 import {firestoreDB} from "../services/firebase";
-import {collection, query , orderBy} from 'firebase/firestore'
+import {collection, query, orderBy, addDoc} from 'firebase/firestore'
 import {useCollectionData} from 'react-firebase-hooks/firestore'
 import {Persons} from "../components/Persons";
 import {Section} from "../components/Section";
-import {Form} from "react-bootstrap";
+import {Button, Form} from "react-bootstrap";
 import {useState} from "react";
-import {PERSON_DATA} from "../data/data";
 
 const personConverter = {
-    toFirestore: undefined,
-    fromFirestore: function (snapshot, options){
+    toFirestore: function (dataInApp) {
+        return{
+            name: dataInApp.name,
+            age: Number(dataInApp.age),
+            city: dataInApp.city,
+        }
+
+    },
+    fromFirestore: function (snapshot, options) {
         const data = snapshot.data(options);
         return {...data, id: snapshot.id}
     }
 };
 
-export function PersonsFromDbPage(){
+
+
+
+export function PersonsFromDbPage() {
     const [searchInput, setSearchInput] = useState()
     const collectionRef = collection(firestoreDB, 'Persons').withConverter(personConverter);
     const queryRef = query(collectionRef, orderBy("name"))
     const [values, loading, error] = useCollectionData(queryRef);
-    console.log({values,loading, error});
+    // console.log({values, loading, error});
+
+
+    function addDummyPerson(){
+        const person = {name:"Dummy", age:19, city:"Mechelen"};
+        addDoc(collectionRef, person);
+    }
+
     return <>
         <div className={"mx-3"}>
             <div className={"m-3"}>
@@ -31,11 +47,13 @@ export function PersonsFromDbPage(){
                                       value={searchInput}
                                       onChange={e => setSearchInput(e.target.value)}/>
                     </Form>
-                    <Persons persons={(searchInput)? values.filter(p => p.name.includes(searchInput) || p.city.includes(searchInput)): values }/>
+                    <div>
+                        <Button onClick={addDummyPerson} variant={"primary"} style={{margin: "5px", width: "20%", height: "35px"}}>+dummy</Button>
+                    </div>
+                    <Persons persons={(searchInput) ? values.filter(p => p.name.includes(searchInput) || p.city.includes(searchInput)) : values}/>
                 </Section>
             </div>
         </div>
     </>
 }
-
 
