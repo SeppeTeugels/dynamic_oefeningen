@@ -15,6 +15,7 @@ import {InputPage} from "./pages/InputPage";
 import {SearchPersonsPage} from "./pages/SearchPersonsPage";
 import "./services/firebase"
 import {PersonsFromDbPage} from "./pages/PersonsFromDbPage";
+import {CarsFromDbPage} from "./pages/CarsFromDbPage";
 
 Number.propTypes = {numbers: PropTypes.any};
 
@@ -34,7 +35,8 @@ function App() {
             <Tab>Favorite Number</Tab>
             <Tab>Input</Tab>
             <Tab>Search</Tab>
-            <Tab>Persons in database</Tab>
+            <Tab>Persons@DB</Tab>
+            <Tab>Cars@DB</Tab>
         </TabList>
 
         <TabPanel>
@@ -68,6 +70,9 @@ function App() {
         </TabPanel>
         <TabPanel>
             <PersonsFromDbPage/>
+        </TabPanel>
+        <TabPanel>
+            <CarsFromDbPage/>
         </TabPanel>
     </Tabs>
       </>
