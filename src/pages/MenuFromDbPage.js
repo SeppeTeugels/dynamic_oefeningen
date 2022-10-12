@@ -1,5 +1,5 @@
 import {Section} from "../components/Section";
-import {collection} from "firebase/firestore";
+import {collection, orderBy, query, where} from "firebase/firestore";
 import {firestoreDB} from "../services/firebase";
 import {useCollectionData} from "react-firebase-hooks/firestore";
 import {MenuCard} from "../components/MenuCard";
@@ -15,9 +15,11 @@ const menuConverter = {
 }
 
 export function MenuFromDbPage(){
-    const query = collection(firestoreDB, 'Products').withConverter(menuConverter);
-    const [values, loading, error] = useCollectionData(query);
+    const collectionRef = collection(firestoreDB, "Products").withConverter(menuConverter);
+    const queryRef = query(collectionRef, where("price", "==", 1), where("name", ">", "a"), orderBy("name"));
+    const [values, loading, error] = useCollectionData(queryRef);
     console.log({values,loading, error});
+    console.log(error);
     return <>
         <Section title={"menu"} initial={1}>
             <MenuCard product={values}/>
