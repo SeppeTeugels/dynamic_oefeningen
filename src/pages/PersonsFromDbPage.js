@@ -29,7 +29,7 @@ export function PersonsFromDbPage() {
     const collectionRef = collection(firestoreDB, 'Persons').withConverter(personConverter);
     const queryRef = query(collectionRef, orderBy("name"))
     const [values, loading, error] = useCollectionData(queryRef);
-    // console.log({values, loading, error});
+    console.log({values, loading, error});
 
 
     function addDummyPerson(){
