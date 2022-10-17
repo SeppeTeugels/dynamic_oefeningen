@@ -34,8 +34,13 @@ export function PersonsFromDbPage() {
 
     async function addDummyPerson() {
         const person = {name: "Dummy", age: 19, city: "Mechelen"};
-        await addDoc(collectionRef, person);
-        console.log("add dummy person done")
+        try{
+            await addDoc(collectionRef, person);
+            console.log("add dummy person done")
+        } catch {
+            console.log("ERROR add dummy person Not done")
+        }
+
     }
 
     function incrementAllAges() {
