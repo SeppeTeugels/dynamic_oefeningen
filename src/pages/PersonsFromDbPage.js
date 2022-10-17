@@ -1,5 +1,5 @@
 import {firestoreDB} from "../services/firebase";
-import {collection, query, orderBy, addDoc} from 'firebase/firestore'
+import {collection, query, orderBy, addDoc, updateDoc, doc} from 'firebase/firestore'
 import {useCollectionData} from 'react-firebase-hooks/firestore'
 import {Persons} from "../components/Persons";
 import {Section} from "../components/Section";
@@ -17,7 +17,7 @@ const personConverter = {
     },
     fromFirestore: function (snapshot, options) {
         const data = snapshot.data(options);
-        return {...data, id: snapshot.id}
+        return {...data, id: snapshot.id, ref:snapshot.ref}
     }
 };
 
@@ -37,6 +37,15 @@ export function PersonsFromDbPage() {
         addDoc(collectionRef, person);
     }
 
+    function incrementAllAges() {
+        values.forEach(person => updateDoc(person.ref, {age: Number(person.age)+1}))
+    }
+    function decreaseAllAges() {
+        values.forEach(person => updateDoc(person.ref, {age: Number(person.age)-1}))
+    }
+
+
+
     return <>
         <div className={"mx-3"}>
             <div className={"m-3"}>
@@ -49,8 +58,11 @@ export function PersonsFromDbPage() {
                     </Form>
                     <div>
                         <Button onClick={addDummyPerson} variant={"primary"} style={{margin: "5px", width: "20%", height: "35px"}}>+dummy</Button>
+                        <Button onClick={incrementAllAges} variant={"primary"} style={{margin: "5px", width: "20%", height: "35px"}}>age+1</Button>
+                        <Button onClick={decreaseAllAges} variant={"primary"} style={{margin: "5px", width: "20%", height: "35px"}}>age-1</Button>
+
                     </div>
-                    <Persons persons={(searchInput) ? values.filter(p => p.name.includes(searchInput) || p.city.includes(searchInput)) : values}/>
+                    <Persons persons={(searchInput)? values.filter(p=> p.name.includes(searchInput) || p.city.includes(searchInput)) : values}/>
                 </Section>
             </div>
         </div>
