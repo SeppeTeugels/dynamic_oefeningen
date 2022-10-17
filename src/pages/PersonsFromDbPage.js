@@ -32,13 +32,16 @@ export function PersonsFromDbPage() {
     console.log({values, loading, error});
 
 
-    function addDummyPerson(){
-        const person = {name:"Dummy", age:19, city:"Mechelen"};
-        addDoc(collectionRef, person);
+    async function addDummyPerson() {
+        const person = {name: "Dummy", age: 19, city: "Mechelen"};
+        await addDoc(collectionRef, person);
+        console.log("add dummy person done")
     }
 
     function incrementAllAges() {
-        values.forEach(person => updateDoc(person.ref, {age: Number(person.age)+1}))
+        const arrayOfPromises = values.forEach(person => updateDoc(person.ref, {age: Number(person.age)+1}))
+        Promise.all((arrayOfPromises));
+        console.log('increment ages with 1 for all persons done')
     }
     function decreaseAllAges() {
         values.forEach(person => updateDoc(person.ref, {age: Number(person.age)-1}))
